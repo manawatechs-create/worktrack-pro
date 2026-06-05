@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: worktrack-pro
+    env: node
+    buildCommand: cd worktrack-server && npm install
+    startCommand: cd worktrack-server && node server.js
