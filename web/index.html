@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkTrack Pro - Gestion de Présence & RH</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { margin: 0; padding: 0; overflow: hidden; background: #F5F7FA; }
+    #loading {
+      display: flex; justify-content: center; align-items: center; height: 100vh;
+      background: linear-gradient(135deg, #1A56DB, #16A34A); color: white;
+      font-family: system-ui, -apple-system, sans-serif; font-size: 20px; flex-direction: column;
+    }
+    .spinner { width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: white; animation: spin 1s ease-in-out infinite; margin-bottom: 20px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .logo-text { font-size: 32px; font-weight: bold; }
+    .logo-text span:last-child { color: #A7F3D0; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div class="logo-text"><span>WorkTrack</span><span>Pro</span></div>
+    <div style="font-size: 12px; margin-top: 8px; opacity: 0.8;">GESTION DE PRÉSENCE & RH</div>
+  </div>
+  <script src="flutter_bootstrap.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      _flutter.loader.loadEntrypoint({serviceWorker: {serviceWorkerVersion: "1"}})
+        .then(function(engine) { return engine.initializeEngine(); })
+        .then(function(runner) { return runner.runApp(); })
+        .then(function() { var el = document.querySelector('#loading'); if (el) el.remove(); });
+    });
+  </script>
+</body>
+</html>
